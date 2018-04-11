@@ -3,9 +3,6 @@ en = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 fr = ['un','deux','trois','quatre','cinq','six','sept','huit','neuf']
 
 hash = {}
-
-9.times do |num|
-hash[digits[num].to_sym] = {french: fr[num], english: en[num]}
-end
+digits.each {|num| hash[num.to_sym] = {french: fr[num.to_i - 1], english: en[num.to_i - 1]}}
 
 p hash
